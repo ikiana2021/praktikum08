@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+      td{
+        text-align: center;
+      }
+    </style>
+    <title>Menghitung Biaya Parkir</title>
+    <script type="text/javascript" charset="utf-8">
+      function hitung() {
+            let jam_masuk = Number(document.getElementById("masuk").value);
+            let jam_keluar = Number(document.getElementById("keluar").value);
+            let selisih = jam_keluar - jam_masuk;
+            let biaya = 0;
+            const tarif_awal = 3000;
+            const tarif_perjam = 1000;
+            if (selisih <= 2) {
+                biaya = tarif_awal;
+            } else {
+                let tambahanJam = selisih - 2;
+                biaya = tarif_awal + (tarif_perjam * tambahanJam);
+            }
+            document.getElementById("biaya").value=biaya;
+            document.getElementById("lama").value=selisih;
+        }
+    </script>
+  </head>
+  <body>
+    <div>
+    	<table>
+    		<thead>
+    			<tr>
+    				<th colspan="4">Biaya Parkir</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr>
+    				<td>Jam Masuk</td>
+    				<td>Jam Keluar</td>
+    				<td>Lama</td>
+    				<td>Keluaran Biaya</td>
+    			</tr>
+    			<tr>
+    				<td><input type="text" id="masuk" onchange="hitung()"></td>
+    				<td><input type="text" id="keluar" onchange="hitung()"></td>
+    				<td><input type="text" id="lama"></td>
+    				<td><input type="text" id="biaya"></td>
+    			</tr>
+    		</tbody>
+    		<tfoot>
+    		  <tr>
+    		    <td colspan="4">Sampai Ketemu Lagi</td>
+    		  </tr>
+    		</tfoot>
+    	</table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Luas & Keliling Lingkaran</title>
+  </head>
+  <body>
+    <div>
+    	<table>
+    		<thead>
+    			<tr>
+    				<th>Lingkaran</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr>
+    				<td>Masukan nilai jari - jari</td>
+    			</tr>
+    			<tr>
+    				<td><input type="text" id="r"></td>
+    			</tr>
+    			<tr>
+    				<td><button onclick="hitung()">Hitung</button></td>
+    			</tr>
+    		</tbody>
+    		<tfoot>
+    			<tr>
+    				<td>Luas lingkaran</td>
+    			</tr>
+    			<tr>
+    				<td><input type="text" id="luas" disabled></td>
+    			</tr>
+    			<tr>
+    				<td>Keliling lingkaran</td>
+    			</tr>
+    			<tr>
+    				<td><input type="text" id="keliling" disabled></td>
+    			</tr>
+    		</tfoot>
+    	</table>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+      const phi = 3.14;
+      var luas;
+      var keliling;
+      var r;
+      var d;
+      function hitung() {
+      	r = parseFloat(document.getElementById("r").value);
+      	luas = phi * Math.pow(r,2);
+      	d = 2 * r;
+      	keliling = phi * d;
+      	document.getElementById('luas').value = luas;
+      	document.getElementById('keliling').value = keliling;
+      }
+    </script>
+  </body>
+</html>
